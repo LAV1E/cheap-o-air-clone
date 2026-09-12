@@ -306,22 +306,17 @@ function Calendar({ depart, setDepart, ret, setRet, onDone }) {
 
 function ClubMilesBanner({ clubMiles }) {
   return (
-    <section className="mt-[78px] w-full">
-      <div className="flex h-[205px] w-full overflow-hidden rounded-[105px] bg-[#f4f5f9]">
-        {/* IMPORTANT:
-            The ClubMiles image already contains its own text.
-            Do NOT add another text layer over it.
-        */}
-        <div className="relative h-[205px] w-[50%] shrink-0 overflow-hidden rounded-r-[105px]">
+    <section className="mx-auto mt-[68px] w-full max-w-[1400px]">
+      <div className="flex h-[184px] w-full overflow-hidden rounded-[92px] bg-[#f4f5f9]">
+        <div className="relative h-[184px] w-[50%] shrink-0 overflow-hidden rounded-r-[92px]">
           <img
             src={clubMiles}
             alt="ClubMiles Rewards"
             className="block h-full w-full object-cover object-left"
           />
 
-          {/* Badge */}
-          <div className="absolute right-[-1px] top-1/2 z-20 flex h-[116px] w-[116px] -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-[0_2px_8px_rgba(0,0,0,.12)]">
-            <div className="flex h-[84px] w-[84px] items-center justify-center rounded-full border-[6px] border-[#f7a719] bg-[#064bc5]">
+          <div className="absolute right-[-1px] top-1/2 z-20 flex h-[104px] w-[104px] -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-[0_2px_8px_rgba(0,0,0,.12)]">
+            <div className="flex h-[76px] w-[76px] items-center justify-center rounded-full border-[6px] border-[#f7a719] bg-[#064bc5]">
               <Award
                 size={43}
                 strokeWidth={2.5}
@@ -331,9 +326,8 @@ function ClubMilesBanner({ clubMiles }) {
           </div>
         </div>
 
-        {/* Right side */}
-        <div className="flex min-w-0 flex-1 items-center justify-between gap-8 px-[70px]">
-          <div className="min-w-0 text-[23px] leading-[1.55] text-[#050505]">
+        <div className="flex min-w-0 flex-1 items-center justify-between gap-5 px-[55px]">
+          <div className="min-w-0 flex-1 text-[20px] leading-[1.55] text-[#050505]">
             <p className="whitespace-nowrap">
               <span className="font-bold">Save up to 10%</span> on select
               flights <span className="font-bold">($25 max).</span>
@@ -344,7 +338,7 @@ function ClubMilesBanner({ clubMiles }) {
             </p>
           </div>
 
-          <button className="shrink-0 rounded-full bg-[#064bc5] px-[10px] py-[19px] text-[22px] font-bold text-white">
+          <button className="mr-[15px] shrink-0 rounded-full bg-[#064bc5] px-[18px] py-[17px] text-[22px] font-bold text-white">
             Plan my trip
           </button>
         </div>
@@ -428,24 +422,20 @@ function App() {
       </header>
 
       {/* Main container */}
-      <main className="mx-auto w-full max-w-[1628px] px-5 xl:px-0">
+      <main className="mx-auto w-full max-w-[1400px] px-0">
         <section className="relative pt-[47px]">
           {/* Hero */}
-          <div className="grid grid-cols-[minmax(0,1fr)_404px] items-start gap-10">
+          <div className="grid grid-cols-[minmax(0,1fr)_364px] items-start gap-10">
             <h1 className="pt-1 text-[40px] font-extrabold leading-tight tracking-[-1px]">
               Book cheap flights on over{' '}
               <span className="text-[#ff4d13]">500</span> airlines
             </h1>
 
-            {/* FIXED:
-                No extra text overlay.
-                The image is displayed only once.
-            */}
-            <div className="relative h-[201px] w-[404px] shrink-0 overflow-hidden rounded-[18px]">
+            <div className="relative h-[180px] w-[364px] shrink-0 overflow-hidden rounded-[18px] bg-white">
               <img
                 src={fallEscape}
                 alt="Plan your fall escape today"
-                className="block h-full w-full object-cover"
+                className="block h-full w-full object-fill"
               />
             </div>
           </div>
@@ -464,7 +454,7 @@ function App() {
                 onClick={() => setActiveTab(name)}
                 className={`pill ${
                   activeTab === name ? 'active' : ''
-                } w-[152px] ${index === 4 ? 'px-7' : ''}`}
+                } w-[136px] ${index === 4 ? 'px-5' : ''}`}
               >
                 <Icon size={22} />
 
@@ -586,9 +576,9 @@ function App() {
           </div>
 
           {/* Search bar */}
-          <div className="relative z-30 flex h-[80px] w-full items-center overflow-visible rounded-[40px] border border-[#b8c8e2] bg-white shadow-[0_8px_25px_rgba(20,54,100,.12)]">
+          <div className="relative z-30 flex h-[70px] w-full items-center overflow-visible rounded-[35px] border border-[#b8c8e2] bg-white shadow-[0_8px_25px_rgba(20,54,100,.12)]">
             {/* Origin */}
-            <div className="flex h-full w-[420px] shrink-0 items-center gap-5 px-6">
+            <div className="flex h-full w-[380px] shrink-0 items-center gap-5 px-6">
               <Plane size={28} />
               <span className="text-[18px] font-semibold">
                 {origin}
@@ -602,7 +592,7 @@ function App() {
                 setOrigin(dest);
                 setDest(currentOrigin);
               }}
-              className="grid h-[50px] w-[50px] shrink-0 place-items-center rounded-full border border-[#c3d0e3] bg-white shadow-sm"
+              className="grid h-[46px] w-[46px] shrink-0 place-items-center rounded-full border border-[#c3d0e3] bg-white shadow-sm"
             >
               <ArrowLeftRight size={22} />
             </button>
@@ -624,7 +614,7 @@ function App() {
             {/* Depart */}
             <button
               onClick={() => setCalOpen(true)}
-              className="flex h-full w-[220px] shrink-0 items-center gap-4 px-6 text-left text-[18px]"
+              className="flex h-full w-[190px] shrink-0 items-center gap-4 px-6 text-left text-[18px]"
             >
               <CalendarDays size={25} />
 
@@ -644,7 +634,7 @@ function App() {
             {/* Return */}
             <button
               onClick={() => setCalOpen(true)}
-              className="flex h-full w-[210px] shrink-0 items-center gap-4 px-6 text-left text-[18px]"
+              className="flex h-full w-[180px] shrink-0 items-center gap-4 px-6 text-left text-[18px]"
             >
               <CalendarDays size={25} />
 
@@ -656,7 +646,7 @@ function App() {
             </button>
 
             {/* Search */}
-            <button className="mr-2 h-[60px] w-[190px] shrink-0 rounded-[31px] bg-[#fb480f] text-[19px] font-extrabold text-white hover:bg-[#ee3e08]">
+            <button className="mr-2 h-[54px] w-[170px] shrink-0 rounded-[28px] bg-[#fb480f] text-[19px] font-extrabold text-white hover:bg-[#ee3e08]">
               Search
             </button>
 
@@ -711,7 +701,7 @@ function App() {
         <ClubMilesBanner clubMiles={clubMiles} />
 
         {/* Confidence */}
-        <section className="mt-[80px] min-h-[180px] rounded-t-[20px] border border-[#c8d3e5] px-7 py-7">
+        <section className="mt-[68px] min-h-[180px] rounded-t-[20px] border border-[#c8d3e5] px-7 py-7">
           <h2 className="text-[30px] font-extrabold">
             Book with Confidence. Trusted by 40M+ Travelers
           </h2>
